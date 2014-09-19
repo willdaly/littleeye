@@ -1,0 +1,14 @@
+= form_tag(mission_path(@mission), method: "put") do
+  = label_tag(:name, "mission code name")
+  = text_field_tag(:name)
+  = label_tag(:clue, "I spy with my little eye, something that begins with a...")
+  = text_field_tag(:clue)
+  = submit_tag("update mission")
+%hr
+= link_to "To Game", mission_path(@mission)
+= link_to "Add Pictures", new_picture_path
+= link_to "delete mission", mission_path(@mission), method: :delete
+%h3 click picture to delete from mission
+-@pictures.each do |p|
+  =link_to picture_path(p), method: :delete do
+    =image_tag p.url

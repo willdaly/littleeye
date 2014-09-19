@@ -1,0 +1,5 @@
+#picsearchform
+  = form_tag("/pictures", :method => "get") do
+    = label_tag(:hashtag_input, "#hashtag")
+    = text_field_tag(:hashtag)
+    = submit_tag("search")

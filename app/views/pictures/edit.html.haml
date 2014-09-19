@@ -1,0 +1,5 @@
+=form_for @picture, url: picture_path, method: 'patch' do |f|
+  %select{ :name => "mission"}
+    -@missions.each do |mission|
+      %option{:value => mission.id}= mission.name
+  = f.submit "add mission id to picture"

@@ -1,0 +1,19 @@
+var guesses = $('#guesses').text();
+var guess = parseInt(guesses);
+var g = guess - 1;
+
+if(<%= Picture.find_by_id(params[:id]).answer? %>){
+  $('#g').hide();
+  $('.choice').hide();
+  $('#picdiv').append("<img src='<%= Picture.find_by_id(params[:id]).url %>' id='answer'>");
+  $('#guesses').text('<%= Mission.find_by_id(Picture.find_by_id(params[:id]).mission_id).clue %> has been spied!');
+} else {
+  if (g > 0){
+    $('#guesses').text(g);
+  } else {
+    $('#g').hide();
+    $('.choice').hide();
+    $('body').css("background", "red");
+    $('#guesses').text("mission failed");
+  }
+}

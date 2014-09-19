@@ -1,0 +1,17 @@
+%div#missioncontrol
+  %h1#codename= @mission.name
+  %br
+  %p#clue I spy with my little eye, something that begins with a
+  %h3.red= @mission.clue[0]
+  %br
+  %h1#g Guesses:
+  %h1#guesses 5
+%div#picdiv
+  -if @pictures
+    -@pictures.shuffle.each do |p|
+      = link_to picture_path(p), method: :post, remote: true do
+        =image_tag p.url, :class => "choice", :id => "#{p.id}"
+
+%div
+  -if @mission.user == current_user
+    =link_to "edit mission", edit_mission_path(@mission)

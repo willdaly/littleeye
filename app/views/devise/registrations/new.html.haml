@@ -1,0 +1,16 @@
+%div#loginpage
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+
+    = f.label :email
+    = f.email_field :email, autofocus: true
+    %br
+    = f.label :password
+    = f.password_field :password, autocomplete: "off"
+    %br
+    = f.label :confirm
+    = f.password_field :password_confirmation, autocomplete: "off"
+    %br
+    %div#loginbutton= f.submit "Sign up"
+
+  = render "devise/shared/links"

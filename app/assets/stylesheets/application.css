@@ -1,0 +1,159 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*****
+header
+******/
+#title {
+  display: inline;
+  font-family: 'droid serif', sans-serif;
+  font-style: italic;
+}
+
+#title a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+nav {
+  max-width: 100%;
+  background: #212121;
+  margin-bottom: 10px;
+}
+
+#links {
+  list-style: none;
+}
+
+#links li {
+  display: inline-block;
+  margin: 1em;
+  color: white;
+}
+/**********************
+*********************/
+
+#loginpage {
+  max-width: 10%;
+  margin: 0 auto;
+  background: #212121;
+  padding: 10px;
+  text-align: center;
+}
+
+#loginbutton {
+  text-align: center;
+}
+
+#missionsindex {
+  background: #212121;
+  max-width: 25%;
+  padding: 10px;
+  text-align: center;
+  display: block;
+}
+
+#missionsindex li {
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.choice:hover {
+  border: 5px solid red;
+}
+
+ #clue, #codename {
+  font-family: 'droid serif', sans-serif;
+  font-style: italic;
+}
+
+#newmissionform {
+  max-width: 34%;
+  margin: 0 auto;
+}
+
+#picsearchform {
+  max-width: 19%;
+  margin: 0 auto;
+}
+
+body {
+  background-image: url('navy_blue.png');
+}
+
+h1, h2, h3, p, label {
+  color: white;
+  font-family: 'droid serif', sans-serif;
+}
+
+a:visited{
+  color:white;
+}
+
+footer {
+  padding-top: 25px;
+  position:fixed;
+  height:40px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  margin-bottom:0px;
+  background: #212121;
+}
+
+footer p, a {
+  display: inline;
+}
+
+#about {
+  background: #212121;
+}
+
+#userscore h3 {
+  display: inline;
+}
+
+#missioncontrol {
+  background: #212121;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#missioncontrol h1, p, h3 {
+  display: inline;
+  margin-right: 5px;
+}
+
+.red {
+  color: red;
+  font-family: 'droid serif', sans-serif;
+  font-style: italic;
+}
+
+.alert, .notice {
+  color: yellow;
+}
+
+#answer {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -75px;
+  margin-top: -75px;
+  border-radius: 100%;
+}
