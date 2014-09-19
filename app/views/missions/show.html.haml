@@ -15,3 +15,8 @@
 %div
   -if @mission.user == current_user
     =link_to "edit mission", edit_mission_path(@mission)
+
+%div
+  = audio_tag "wah.wav", :id => "wahwah", :preload => "auto"
+  = audio_tag "horn.wav", :id => "horn", :preload => "auto"
+  = audio_tag "bass.wav", :id => "bass", :preload => "auto"           

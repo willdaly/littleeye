@@ -7,13 +7,18 @@ if(<%= Picture.find_by_id(params[:id]).answer? %>){
   $('.choice').hide();
   $('#picdiv').append("<img src='<%= Picture.find_by_id(params[:id]).url %>' id='answer'>");
   $('#guesses').text('<%= Mission.find_by_id(Picture.find_by_id(params[:id]).mission_id).clue %> has been spied!');
+  $('#guesses').css("color", "#FFD700");
+  $('#horn')[0].play();
 } else {
   if (g > 0){
+    $('#wahwah')[0].play();
     $('#guesses').text(g);
+    $('#'+'<%= Picture.find_by_id(params[:id]).id %>').css("opacity", "0.1");
   } else {
     $('#g').hide();
     $('.choice').hide();
     $('body').css("background", "red");
     $('#guesses').text("mission failed");
+    $('#bass')[0].play();
   }
 }

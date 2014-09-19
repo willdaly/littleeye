@@ -72,7 +72,11 @@ nav {
 }
 
 .choice:hover {
-  border: 5px solid red;
+  border: 2.5px solid red;
+}
+
+.choice {
+  background: #212121;
 }
 
  #clue, #codename {
