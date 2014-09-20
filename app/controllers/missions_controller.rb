@@ -8,10 +8,11 @@ class MissionsController < ApplicationController
   end
 
   def create
-    @mission = current_user.missions.build(name: params[:name], clue: params[:clue], guesses: 5)
+    @mission = current_user.missions.build(name: params[:name], clue: params[:clue])
     if @mission.save
       flash.notice = "#{@mission.name} created"
-      redirect_to pictures_path(hashtag: @mission.clue)
+      instagram = Instagram.tag_recent_media(params[:clue], {:count => 24})
+      @urlarray = instagram.map!{ |ig| ig.images.thumbnail.url}
     else
       flash.now[:alert] = "Your mission could not be created"
       render :new
@@ -37,11 +38,6 @@ class MissionsController < ApplicationController
       flash.notice = "Your changes could not be saved."
       render 'edit'
     end
-  end
-
-  def begin
-    @mission = Mission.find_by_id(params[:id])
-    @mission.update(guesses: 5)
   end
 
   def destroy

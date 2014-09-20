@@ -191,9 +191,15 @@ footer p, a {
 
 #editoptions {
   text-align: center;
+  background: #212121;
 }
 
-#picdiv {
+#picdiv, #pix {
   max-width: 60%;
   margin: 0 auto;
+}
+
+#pix {
+  text-align: center;
+  color: white;
 }

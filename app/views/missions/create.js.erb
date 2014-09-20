@@ -1,0 +1,6 @@
+$('#pix').append('<h2>Click on picture to set the mission target</h2>');
+$('#pix').append('<br>');
+var url = <%= raw @urlarray.to_json %>;
+for(i=0; i < url.length; i++){
+  $('#pix').append("<a href='#'><img src='"+url[i]+"'></a>");
+}
