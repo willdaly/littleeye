@@ -1,40 +1,25 @@
 !!!
 %html{:lang => "en"}
   %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %meta{:charset => "utf-8"}/
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700italic' rel='stylesheet' type='text/css'>
     %title= content_for?(:title) ? yield(:title) : "Little Eye"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-%nav
-  %ul#links
-    %li
-      %h1#title
-        =link_to "I Spy With My Little Eye", root_path
-    %li
-      powered by Instagram
-    - if user_signed_in?
-      %li
-        =current_user.email if current_user
-      %li
-        #{current_user.score} Missions Completed
-      %li
-        =link_to "Log Out", destroy_user_session_path, method: :delete
-    - else
-      %li
-        =link_to "Sign Up", new_user_registration_path
-      %li
-        =link_to "Sign In", new_user_session_path
-      %li
-        - if notice.present?
-          .alert-box.success{ "data-alert" => "" }
-            = notice
-        - if alert.present?
-          .alert-box.alert{ "data-alert" => "" }
-            = alert
-= yield
-%footer
-  %p &copy 2014 Will Daly. All Rights Reserved.  |
-  =link_to("View Source", "http://www.github.com/willdaly/littleeye")
+    %header
+      = render 'layouts/navigation'
+    %alerts
+      - if notice.present?
+        .alert-box.success{ "data-alert" => "" }
+          = notice
+      - if alert.present?
+        .alert-box.alert{ "data-alert" => "" }
+          = alert
+    = yield
+    %footer
+      %p &copy 2014 Will Daly. All Rights Reserved.  |
+      =link_to("View Source", "http://www.github.com/willdaly/littleeye")

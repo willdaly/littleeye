@@ -1,0 +1,7 @@
+%div#newmissionform
+  = form_tag(missions_path(@mission), method: "create", remote:true) do
+    = label_tag(:name, "mission code name")
+    = text_field_tag(:name)
+    = label_tag(:clue, "set the clue to an instagram hashtag, e.g. astonmartin")
+    = text_field_tag(:clue)
+    = submit_tag("create mission", class: "button expand")

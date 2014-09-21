@@ -1,3 +1,4 @@
--@urlarray.each do |ur|
-  =link_to pictures_path(picture: {answer: :true, url: ur, mission_id: @mission.id}), method: :post do
-    =image_tag ur
+%h2 Click on picture to set the mission target
+-@urlarray.each do |url|
+  =link_to pictures_path(picture: {answer: :true, url: url, mission_id: @mission.id}), method: :post do
+    =image_tag url

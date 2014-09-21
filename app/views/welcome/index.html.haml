@@ -1,9 +1,1 @@
-%div#missionsindex
-  %h2 Missions
-  %ul
-  - @missions.each do |mission|
-    %li
-      = link_to "#{mission.name}", mission_path(mission)
-  %br
-  -if user_signed_in?
-    =link_to "Create New Mission", new_mission_path
+#pix

@@ -4,13 +4,8 @@
 
     = f.label :email
     = f.email_field :email, autofocus: true
-    %br
     = f.label :password
     = f.password_field :password, autocomplete: "off"
-    %br
-    = f.label :confirm
+    = f.label :password_confirmation
     = f.password_field :password_confirmation, autocomplete: "off"
-    %br
-    %div#loginbutton= f.submit "Sign up"
-
-  = render "devise/shared/links"
+    %div#loginbutton= f.submit "Sign up", :class => "button expand"

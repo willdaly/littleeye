@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
 
 /*****
@@ -60,15 +62,9 @@ nav {
 /**********************
 *********************/
 
-#loginpage {
-  max-width: 10%;
-  margin: 0 auto;
+#loginpage, #signin, #signup, #newmissionform, #createmission  {
   background: #212121;
   padding: 10px;
-  text-align: center;
-}
-
-#loginbutton {
   text-align: center;
 }
 
@@ -108,14 +104,6 @@ nav {
   font-style: italic;
 }
 
-#newmissionform {
-  padding: 10px 0;
-  background: #212121;
-  max-width: 50%;
-  margin: 0 auto;
-  text-align: center;
-}
-
 #picsearchform {
   max-width: 19%;
   margin: 0 auto;
@@ -135,7 +123,7 @@ a:visited{
 }
 
 footer {
-  padding-top: 25px;
+  padding-top: 10px;
   position:fixed;
   height:40px;
   bottom:0px;
@@ -201,5 +189,6 @@ footer p, a {
 
 #pix {
   text-align: center;
-  color: white;
+  color: #FFD700;
+  font-family: 'droid serif', sans-serif;
 }

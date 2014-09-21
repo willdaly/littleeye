@@ -1,0 +1,48 @@
+%nav.top-bar{"data-topbar" => "", :role => "navigation"}
+  %ul.title-area
+    %li.name
+      %h1
+        =link_to "I Spy With My Little Eye", root_path
+  %section.top-bar-section
+    %ul.left
+      %li.has-dropdown
+        %a{:href => "#"} Play Missions
+        %ul.dropdown
+          - @missions.each do |mission|
+            %li
+              = link_to "#{mission.name}", mission_path(mission)
+      -if user_signed_in?
+        %li
+          %a{"data-reveal-id" => "createmission", :href => "#"} Create New Mission
+
+    %ul.right
+      -if user_signed_in?
+        %li
+          =link_to "Agent: #{current_user.email}" if current_user
+        %li
+          =link_to "#{current_user.score} Missions Completed"
+        %li.has-dropdown
+          %a{:href => "#"} Edit My Missions
+          %ul.dropdown
+            - @editable_missions.each do |mission|
+              %li
+                =link_to mission.name, edit_mission_path(mission)
+        %li
+          =link_to "Log Out", destroy_user_session_path, method: :delete
+      -else
+        %li
+          %a{"data-reveal-id" => "signin", :href => "#"} Sign In
+        %li
+          %a{"data-reveal-id" => "signup", :href => "#"} Sign Up
+
+#signin.reveal-modal{"data-reveal" => ""}
+  = render 'devise/sessions/new'
+  %a.close-reveal-modal ×
+
+#signup.reveal-modal{"data-reveal" => ""}
+  = render 'devise/registrations/new'
+  %a.close-reveal-modal ×
+
+#createmission.reveal-modal{"data-reveal" => ""}
+  = render 'missions/new'
+  %a.close-reveal-modal ×

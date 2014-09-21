@@ -11,18 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918143512) do
-
-  create_table "locations", force: true do |t|
-    t.string "address"
-    t.float  "latitude"
-    t.float  "longitude"
-  end
+ActiveRecord::Schema.define(version: 20140921111424) do
 
   create_table "missions", force: true do |t|
     t.string  "name"
     t.string  "clue"
-    t.integer "guesses"
     t.integer "user_id"
   end
 
