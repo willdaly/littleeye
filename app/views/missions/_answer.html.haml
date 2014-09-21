@@ -1,0 +1,3 @@
+-@urlarray.each do |ur|
+  =link_to pictures_path(picture: {answer: :true, url: ur, mission_id: @mission.id}), method: :post do
+    =image_tag ur
