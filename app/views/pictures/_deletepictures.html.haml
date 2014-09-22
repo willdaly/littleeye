@@ -1,0 +1,4 @@
+%h2 click picture to delete
+-@pictures.each do |p|
+  =link_to picture_path(p), method: :delete, remote:true do
+    =image_tag p.url

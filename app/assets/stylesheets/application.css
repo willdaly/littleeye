@@ -91,9 +91,11 @@ nav {
   text-decoration: none;
 }
 
+/*
 .choice:hover {
   border: 2.5px solid red;
 }
+*/
 
 .choice {
   background: #212121;
@@ -177,13 +179,17 @@ footer p, a {
   border-radius: 100%;
 }
 
-#editoptions {
-  text-align: center;
+#edit {
   background: #212121;
 }
 
+#editoptions ul {
+  list-style: none;
+}
+
+
 #picdiv, #pix {
-  max-width: 60%;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -191,4 +197,8 @@ footer p, a {
   text-align: center;
   color: #FFD700;
   font-family: 'droid serif', sans-serif;
+}
+
+#editpictures {
+  margin-top: 20px;
 }

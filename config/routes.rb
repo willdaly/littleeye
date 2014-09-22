@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :pictures, only: [:new, :create, :index, :show, :destroy]
   post '/pictures/:id', to: 'pictures#guess'
+  get '/deletepictures', to: 'pictures#deletepictures'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

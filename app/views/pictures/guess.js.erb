@@ -1,30 +1,31 @@
 var guesses = $('#guesses').text();
 var guess = parseInt(guesses);
 var g = guess - 1;
-
+$(' ul.left li.has-dropdown.not-click').removeClass("active");
 if(<%= Picture.find_by_id(params[:id]).answer? %>){
-  $('#g').hide();
-  $('#clue').hide();
-  $('.red').hide();
-  $('.choice').hide();
+  hidemissioncontrolelements();
   $('#picdiv').append("<img src='<%= Picture.find_by_id(params[:id]).url %>' id='answer'>");
   $('#guesses').text('<%= Mission.find_by_id(Picture.find_by_id(params[:id]).mission_id).clue %> has been spied!');
   $('#guesses').css("color", "#FFD700");
   $('#horn')[0].play();
-  $('#guesses').append("</br><a href='/'>get next mission</a>");
+  $('ul.left li.has-dropdown.not-click').addClass("active");
 } else {
   if (g > 0){
     $('#wahwah')[0].play();
     $('#guesses').text(g);
     $('#'+'<%= Picture.find_by_id(params[:id]).id %>').css("opacity", "0.1");
   } else {
-    $('#g').hide();
-    $('#clue').hide();
-    $('.red').hide();
-    $('.choice').hide();
-    $('body').css("background", "red");
+    hidemissioncontrolelements();
+    // $('body').css("background", "red");
     $('#guesses').text("mission failed");
-    $('#guesses').append("</br><a href='/'>get next mission</a>");
     $('#bass')[0].play();
+    $(' ul.left li.has-dropdown.not-click').addClass("active");
   }
+}
+
+function hidemissioncontrolelements() {
+  $('#g').hide();
+  $('p#clue').hide();
+  $('.red').hide();
+  $('.choice').hide();
 }

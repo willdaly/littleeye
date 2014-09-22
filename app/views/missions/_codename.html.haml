@@ -1,0 +1,6 @@
+= form_tag(mission_path(@mission), method: "put") do
+  = label_tag(:name, "mission code name")
+  = text_field_tag(:name)
+  = label_tag(:clue, "clue")
+  = text_field_tag(:clue)
+  = submit_tag("update mission", class: "button")

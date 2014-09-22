@@ -11,11 +11,7 @@
     -@pictures.shuffle.each do |p|
       = link_to picture_path(p), method: :post, remote: true do
         =image_tag p.url, :class => "choice", :id => "#{p.id}"
-
-%div
-  -if @mission.user == current_user
-    =link_to "edit mission", edit_mission_path(@mission)
-
+        
 %div
   = audio_tag "wah.wav", :id => "wahwah", :preload => "auto"
   = audio_tag "horn.wav", :id => "horn", :preload => "auto"

@@ -10,30 +10,35 @@ class PicturesController < ApplicationController
 
   def index
     @picture = Picture.new
-    @missions = current_user.missions
+    @mission = Mission.find_by_id(params[:id])
     @instagram = Instagram.tag_recent_media(params[:hashtag], {:count => 24})
-    render :index
   end
 
   def create
     @picture = Picture.new(picture_params)
-    mission = Mission.find_by_id(@picture.mission_id)
+    @mission = Mission.find_by_id(@picture.mission_id)
     if @picture.save
       flash.notice = "added picture"
-      redirect_to edit_mission_path(mission)
+      redirect_to edit_mission_path(@mission)
     else
       flash.now[:alert] = "picture could not be saved"
       redirect_to new_picture_path
     end
   end
 
+  def deletepictures
+    @pictures = Picture.where(mission_id: params[:id])
+  end
+
   def guess
     picture = Picture.find_by_id(params[:id])
     mission = Mission.find_by_id(picture.mission_id)
     if picture.answer?
-      unless mission.user_id == current_user.id
-        current_user.update(score: current_user.score + 1) if current_user
-        current_user.save if current_user
+      if user_signed_in?
+        unless mission.user_id == current_user.id
+          current_user.update(score: current_user.score + 1) if current_user
+          current_user.save if current_user
+        end
       end
     end
   end
@@ -41,8 +46,8 @@ class PicturesController < ApplicationController
   def destroy
     picture = Picture.find_by_id(params[:id])
     @mission = Mission.find_by_id(picture.mission_id)
+    @pictures = Picture.where(mission_id: @mission.id)
     picture.delete()
-    redirect_to @mission
   end
 
   private
