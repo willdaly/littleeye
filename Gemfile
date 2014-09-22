@@ -19,7 +19,7 @@ gem 'haml'
 gem 'devise'
 gem 'pg'
 gem 'foundation-rails', '~> 5.4.3.1'
-gem 'rails_12factor', group: :development
+gem 'rails_12factor', group: :production
 gem 'figaro'
 
 # Use ActiveModel has_secure_password

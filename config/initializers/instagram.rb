@@ -2,8 +2,8 @@ require "instagram"
 
 Instagram.configure do |config|
 
-  config.client_id = ENV["instagram_client_id"]
+  config.client_id = ENV["INSTAGRAM_CLIENT_ID"]
 
-  config.access_token = ENV["instagram_access_token"]
+  config.access_token = ENV["INSTAGRAM_CLIENT_ID"]
 
 end
