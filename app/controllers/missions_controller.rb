@@ -11,6 +11,7 @@ class MissionsController < ApplicationController
     @mission = current_user.missions.build(name: params[:name], clue: params[:clue])
     if @mission.save
       flash.notice = "#{@mission.name} created"
+      @missions = Mission.all
       instagram = Instagram.tag_recent_media(params[:clue], {:count => 24})
       @urlarray = instagram.map!{ |ig| ig.images.thumbnail.url}
     else
