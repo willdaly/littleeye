@@ -1,6 +1,6 @@
 class MissionsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:show, :begin]
+  before_action :authenticate_user!, except: [:show]
   before_action :correct_user, only: :edit
 
   def new
@@ -11,8 +11,7 @@ class MissionsController < ApplicationController
     @mission = current_user.missions.build(name: params[:name], clue: params[:clue])
     if @mission.save
       flash.notice = "#{@mission.name} created"
-      @missions = Mission.all
-      instagram = Instagram.tag_recent_media(params[:clue], {:count => 24})
+      instagram = Instagram.tag_recent_media(params[:clue], {:count => 28})
       @urlarray = instagram.map!{ |ig| ig.images.thumbnail.url}
     else
       flash.now[:alert] = "Your mission could not be created"

@@ -2,7 +2,7 @@
   %ul.title-area
     %li.name
       %h1
-        =link_to "I Spy With My Little Eye"
+        =content_tag("a", "I Spy With My Little Eye")
     %li.toggle-topbar.menu-icon
       %a{:href => "#"}
         %span Menu
@@ -21,9 +21,9 @@
     %ul.right
       -if user_signed_in?
         %li
-          =link_to "Agent: #{current_user.email}" if current_user
+          =content_tag("a", "Agent: #{current_user.email}") if current_user
         %li
-          =link_to "#{current_user.score} Missions Completed"
+          =content_tag("a", "#{current_user.score} Missions Completed")
         %li.has-dropdown
           %a{:href => "#"} Edit My Missions
           %ul.dropdown
