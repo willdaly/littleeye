@@ -1,6 +1,5 @@
-= form_tag(mission_path(@mission), method: "put") do
-  = label_tag(:name, "mission code name")
-  = text_field_tag(:name)
-  = label_tag(:clue, "clue")
-  = text_field_tag(:clue)
-  = submit_tag("update mission", class: "button")
+.modal
+  = form_tag(mission_path(@mission), method: "put", remote:true) do
+    = label_tag(:name, "mission code name")
+    = text_field_tag(:name, @mission.name)
+    = submit_tag("update mission name", class: "button expand")

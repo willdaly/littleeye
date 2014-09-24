@@ -31,9 +31,8 @@ class MissionsController < ApplicationController
 
   def update
     @mission = Mission.find_by_id(params[:id])
-    if @mission.update(clue: params[:clue])
+    if @mission.update(name: params[:name])
       flash.notice = "added clue to #{@mission.name}"
-      redirect_to mission_path(@mission)
     else
       flash.notice = "Your changes could not be saved."
       render 'edit'

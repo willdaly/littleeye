@@ -1,4 +1,4 @@
-%div#newmissionform
+%div.modal
   = form_tag(missions_path(@mission), method: "create", remote:true) do
     = label_tag(:name, "mission code name")
     = text_field_tag(:name)
