@@ -10,7 +10,7 @@
     %ul.left
       %li.has-dropdown
         %a{:href => "#"} Play Missions
-        %ul.dropdown
+        %ul.dropdown#playmissions
           - @missions.each do |mission|
             %li
               = link_to "#{mission.name}", mission_path(mission), remote:true
