@@ -26,7 +26,7 @@
           =content_tag("a", "#{current_user.score} Missions Completed")
         %li.has-dropdown
           %a{:href => "#"} Edit My Missions
-          %ul.dropdown
+          %ul.dropdown#editmissions
             - @editable_missions.each do |mission|
               %li
                 =link_to mission.name, edit_mission_path(mission), remote:true
