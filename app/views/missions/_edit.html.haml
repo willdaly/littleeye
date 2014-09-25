@@ -11,7 +11,7 @@
       %li
         %a{"data-reveal-id" => "codename", :href => "#"} Mission Name
       %li
-        =link_to "Mission Target"
+        =link_to "Mission Target", changetarget_path(id: @mission.id), remote:true
       %li.has-form
         .row.collapse
           = form_tag(pictures_path(:id => @mission.id), :method => "get", remote:true) do

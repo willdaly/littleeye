@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
   resources :missions, only: [:new, :create, :edit, :update, :show, :destroy]
-  post '/missions/:id', to: 'missions#begin'
 
-  resources :pictures, only: [:new, :create, :index, :show, :destroy]
+  resources :pictures, only: [:new, :create, :index, :update, :show, :destroy]
   post '/pictures/:id', to: 'pictures#guess'
   get '/deletepictures', to: 'pictures#deletepictures'
+  get '/changetarget', to: 'pictures#changetarget'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

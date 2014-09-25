@@ -30,6 +30,10 @@ class PicturesController < ApplicationController
     @pictures = Picture.where(mission_id: params[:id])
   end
 
+  def changetarget
+    @pictures = Picture.where(mission_id: params[:id])
+  end
+
   def guess
     picture = Picture.find_by_id(params[:id])
     mission = Mission.find_by_id(picture.mission_id)
@@ -41,6 +45,17 @@ class PicturesController < ApplicationController
         end
       end
     end
+  end
+
+  def update
+    picture = Picture.find_by_id(params[:id])
+    @mission = Mission.find_by_id(picture.mission_id)
+    @pictures = Picture.where(mission_id: @mission.id)
+    current_target = @pictures.find_by(answer: true)
+    current_target.update(answer: false)
+    current_target.save
+    picture.update(answer: true)
+    picture.save
   end
 
   def destroy

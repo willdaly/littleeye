@@ -1,0 +1,4 @@
+%h2 click picture to update mission target
+-@pictures.each do |p|
+  =link_to picture_path(p), method: :put, remote:true do
+    =image_tag p.url
