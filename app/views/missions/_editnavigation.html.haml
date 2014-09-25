@@ -19,7 +19,8 @@
               = text_field_tag(:hashtag)
             .large-5.small-3.columns
               = submit_tag("Add More Pictures", class: "button [tiny small large]")
-      %li
-        =link_to "delete pictures", deletepictures_path(id: @mission.id), remote:true
+      -if @pictures
+        %li
+          =link_to "delete pictures", deletepictures_path(id: @mission.id), remote:true
       %li
         = link_to "delete mission", mission_path(@mission), method: :delete, data: {confirm: "Are you sure you want to delete #{@mission.name}?"}
