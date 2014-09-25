@@ -11,10 +11,17 @@ class PicturesController < ApplicationController
   def index
     @picture = Picture.new
     @mission = Mission.find_by_id(params[:id])
-    @instagram = Instagram.tag_recent_media(params[:hashtag], {:count => 24})
+    string = params[:hashtag]
+    array = string.split(" ")
+    hashtag = array.join
+    @instagram = Instagram.tag_recent_media(hashtag, {:count => 24})
   end
 
   def create
+    #so that the navbar will work
+    @missions = Mission.all
+    @editable_missions = Mission.where(user_id: current_user.id)
+    #
     @picture = Picture.new(picture_params)
     @mission = Mission.find_by_id(@picture.mission_id)
     if @picture.save
