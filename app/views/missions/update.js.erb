@@ -1,3 +1,6 @@
 $("header").empty();
 $("header").append( "<%=j render 'layouts/navigation'%>" );
+$("#edit").remove();
+$("#pix").prepend( "<%=j render 'missions/editnavigation'%>" );
 $(function(){ $(document).foundation(); });
+$("#codename").foundation('reveal', 'close');
