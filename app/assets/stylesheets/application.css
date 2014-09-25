@@ -207,3 +207,13 @@ footer p, a {
 .alert-box {
   text-align: center;
 }
+
+.ep {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+.ep h3 {
+  color: red;
+}

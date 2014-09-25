@@ -2,7 +2,10 @@
   %ul.title-area
     %li.name
       %h1
-        =content_tag("a", "Setup #{@mission.name}")
+        -if @mission.name.length < 23
+          =content_tag("a", "#{@mission.name}")
+        -else
+          =content_tag("a", "#{@mission.name[0..20]}...")
   %section.top-bar-section
     %ul.left
       %li
@@ -25,7 +28,11 @@
 #editpictures
   -if @pictures
     -@pictures.each do |p|
-      =image_tag p.url
+      -if p.answer?
+        %div.ep{style: "background-image: url(#{p.url});"}
+          %h3 target
+      -else
+        =image_tag p.url
 
 #codename.reveal-modal{"data-reveal" => ""}
   = render 'missions/codename'
