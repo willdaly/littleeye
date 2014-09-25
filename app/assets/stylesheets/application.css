@@ -211,7 +211,8 @@ footer p, a {
 .ep {
   width: 150px;
   height: 150px;
-  display: inline-block;
+  float: left;
+  margin-right: 15px;
 }
 
 .ep h3 {
