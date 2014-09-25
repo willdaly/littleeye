@@ -32,7 +32,18 @@ class MissionsController < ApplicationController
   def update
     @mission = Mission.find_by_id(params[:id])
     if @mission.update(name: params[:name])
-      flash.notice = "added clue to #{@mission.name}"
+      flash.notice = "changed name to #{@mission.name}"
+    else
+      flash.notice = "Your changes could not be saved."
+      render 'edit'
+    end
+  end
+
+  def updateclue
+    @mission = Mission.find_by_id(params[:id])
+    @pictures = Picture.where(mission_id: @mission.id)
+    if @mission.update(clue: params[:clue])
+      flash.notice = "changed target of #{@mission.name} to #{@mission.clue}"
     else
       flash.notice = "Your changes could not be saved."
       render 'edit'

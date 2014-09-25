@@ -1,0 +1,5 @@
+.modal
+  = form_tag(updateclue_path(id: @mission.id), method: "put", remote:true) do
+    = label_tag(:clue, "I spy with my little eye...")
+    = text_field_tag(:clue, @mission.clue)
+    = submit_tag("update mission target", class: "button expand")

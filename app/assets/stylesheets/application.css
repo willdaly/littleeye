@@ -62,7 +62,7 @@ nav {
 /**********************
 *********************/
 
-.modal, #signin, #signup, #createmission, #codename {
+.modal, #signin, #signup, #createmission, #codename, #missiontarget {
   background: #212121;
   padding: 10px;
   text-align: center;

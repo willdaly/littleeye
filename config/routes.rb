@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
   resources :missions, only: [:new, :create, :edit, :update, :show, :destroy]
+  put '/updateclue', to: 'missions#updateclue'
 
   resources :pictures, only: [:new, :create, :index, :update, :show, :destroy]
   post '/pictures/:id', to: 'pictures#guess'
