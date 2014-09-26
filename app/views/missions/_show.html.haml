@@ -2,7 +2,7 @@
   %h1#codename= @mission.name
   %br
   %p#clue I spy with my little eye, something that begins with a
-  %h3.red= @mission.clue[0]
+  %h3.red= @mission.clue[0].upcase
   %br
   %h1#g Guesses:
   %h1#guesses 5
@@ -11,7 +11,7 @@
     -@pictures.shuffle.each do |p|
       = link_to picture_path(p), method: :post, remote: true do
         =image_tag p.url, :class => "choice", :id => "#{p.id}"
-        
+
 %div
   = audio_tag "wah.wav", :id => "wahwah", :preload => "auto"
   = audio_tag "horn.wav", :id => "horn", :preload => "auto"

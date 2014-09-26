@@ -10,7 +10,7 @@ class MissionsController < ApplicationController
   def create
     @mission = current_user.missions.build(name: params[:name], clue: params[:clue])
     if @mission.save
-      flash.notice = "#{@mission.name} created"
+      # flash.notice = "#{@mission.name} created"
       string = params[:clue]
       array = string.split(" ")
       hashtag = array.join
@@ -35,7 +35,7 @@ class MissionsController < ApplicationController
   def update
     @mission = Mission.find_by_id(params[:id])
     if @mission.update(name: params[:name])
-      flash.notice = "changed name to #{@mission.name}"
+      # flash.notice = "changed name to #{@mission.name}"
     else
       flash.notice = "Your changes could not be saved."
       render 'edit'
@@ -46,7 +46,7 @@ class MissionsController < ApplicationController
     @mission = Mission.find_by_id(params[:id])
     @pictures = Picture.where(mission_id: @mission.id)
     if @mission.update(clue: params[:clue])
-      flash.notice = "changed target of #{@mission.name} to #{@mission.clue}"
+      # flash.notice = "changed target of #{@mission.name} to #{@mission.clue}"
     else
       flash.notice = "Your changes could not be saved."
       render 'edit'
@@ -55,7 +55,7 @@ class MissionsController < ApplicationController
 
   def destroy
     mission = Mission.find_by_id(params[:id])
-    flash.notice = "#{mission.name} deleted"
+    # flash.notice = "#{mission.name} deleted"
     mission.delete()
     redirect_to root_path
   end

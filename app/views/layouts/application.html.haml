@@ -12,13 +12,6 @@
   %body
     %header
       = render 'layouts/navigation'
-    %alerts
-      - if notice.present?
-        .alert-box.success{ "data-alert" => "" }
-          = notice
-      - if alert.present?
-        .alert-box.alert{ "data-alert" => "" }
-          = alert
     = yield
     %footer
       %p &copy 2014 Will Daly. All Rights Reserved.  |
