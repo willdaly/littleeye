@@ -5,9 +5,8 @@ $(' ul.left li.has-dropdown.not-click').removeClass("active");
 if(<%= Picture.find_by_id(params[:id]).answer? %>){
   hidemissioncontrolelements();
   $('#picdiv').append("<img src='<%= Picture.find_by_id(params[:id]).url %>' id='answer'>");
-  $('#guesses').text('<%= Mission.find_by_id(Picture.find_by_id(params[:id]).mission_id).clue %> has been spied!');
+  $('#missioncontrol').text('<%= Mission.find_by_id(Picture.find_by_id(params[:id]).mission_id).clue %> has been spied!');
   $('#guesses').css("color", "#FFD700");
-  $('#clue').remove();
   $('#horn')[0].play();
   $('ul.left li.has-dropdown.not-click').addClass("active");
 } else {
@@ -17,14 +16,15 @@ if(<%= Picture.find_by_id(params[:id]).answer? %>){
     $('#'+'<%= Picture.find_by_id(params[:id]).id %>').css("opacity", "0.1");
   } else {
     hidemissioncontrolelements();
-    // $('body').css("background", "red");
-    $('#guesses').text("mission failed");
+    $('#missioncontrol').css("background", "red");
+    $('#missioncontrol').text("mission failed");
     $('#bass')[0].play();
     $(' ul.left li.has-dropdown.not-click').addClass("active");
   }
 }
 
 function hidemissioncontrolelements() {
+  $('#cn').hide();
   $('#g').hide();
   $('p#clue').hide();
   $('.red').hide();
