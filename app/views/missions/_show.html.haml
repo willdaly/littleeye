@@ -1,11 +1,13 @@
-%div#missioncontrol
-  %h2#codename= @mission.name
-  %br
-  %h2#clue I spy with my little eye, something that begins with a
-  %h2.red= @mission.clue[0].upcase
-  %br
-  %h1#g Guesses:
-  %h1#guesses 5
+%ul.inline-list#missioncontrol
+  %li
+    %p#cn= @mission.name
+  %li
+    %p#clue I spy with my little eye, something that begins with a
+    %p.red= @mission.clue[0].upcase
+  %li
+    %p#g Guesses:
+    %p.red#guesses 5
+
 %div#picdiv
   -if @pictures
     -@pictures.shuffle.each do |p|

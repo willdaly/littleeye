@@ -19,45 +19,15 @@
 /*****
 header
 ******/
-#title {
-  display: inline;
+.name h1 a {
   font-family: 'droid serif', sans-serif;
   font-style: italic;
-}
-
-#title a:hover {
+  color: #FFD700;
   text-shadow: 2px 2px #ff0000;
 }
 
-#title a {
-  color: #FFD700;
-  text-decoration: none;
-}
-
-nav {
-  max-width: 100%;
-  background: #212121;
-  margin-bottom: 10px;
-}
-
-#links {
-  list-style: none;
-}
-
-#links li {
-  display: inline-block;
-  margin: 1em;
-  color: white;
-}
-
-#links li a {
-  text-decoration: none;
-  color: #FFD700;
+ul.left li a {
   font-family: 'droid serif', sans-serif;
-}
-
-#links li a:hover {
-  text-shadow: 1px 1px #ff0000;
 }
 /**********************
 *********************/
@@ -101,11 +71,6 @@ nav {
   background: #212121;
 }
 
-#codename {
-  font-family: 'droid serif', sans-serif;
-  font-style: italic;
-}
-
 #picsearchform {
   max-width: 19%;
   margin: 0 auto;
@@ -147,22 +112,36 @@ footer p, a {
   display: inline;
 }
 
-#missioncontrol {
+/****
+SHOW
+****/
+
+ul.inline-list#missioncontrol {
   background: #212121;
+  margin: 0 auto;
+  max-width: 80%;
   margin-bottom: 20px;
-  text-align: center;
+  list-style: none;
 }
 
-#missioncontrol h1, p, h3 {
+#missioncontrol p {
+  font-family: 'droid serif', sans-serif;
   display: inline;
   margin-right: 5px;
 }
 
-.red {
-  color: red;
-  font-family: 'droid serif', sans-serif;
+#clue {
+  color: #FFD700;
+  text-shadow: 1px 1px #ff0000;
   font-style: italic;
 }
+
+.red {
+  color: red;
+}
+
+/**
+**/
 
 .alert, .notice {
   color: yellow;

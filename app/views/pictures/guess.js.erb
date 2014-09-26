@@ -7,6 +7,7 @@ if(<%= Picture.find_by_id(params[:id]).answer? %>){
   $('#picdiv').append("<img src='<%= Picture.find_by_id(params[:id]).url %>' id='answer'>");
   $('#guesses').text('<%= Mission.find_by_id(Picture.find_by_id(params[:id]).mission_id).clue %> has been spied!');
   $('#guesses').css("color", "#FFD700");
+  $('#clue').remove();
   $('#horn')[0].play();
   $('ul.left li.has-dropdown.not-click').addClass("active");
 } else {
