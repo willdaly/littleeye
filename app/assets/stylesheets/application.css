@@ -135,28 +135,45 @@ SHOW
   border-radius: 100%;
 }
 
+/****
+edit
+****/
 #edit {
   background: #212121;
+  text-align: center;
 }
 
-#editoptions ul {
-  list-style: none;
+#edit .button {
+  margin-top: 20%;
 }
 
+#edit .row.collapse {
+  margin-top: 12%;
+}
 
-#picdiv {
+#edit .postfix {
+  margin-top: 5%;
+}
+
+/****
+****/
+
+
+#picdiv, #editpictures {
   max-width: 80%;
   margin: 0 auto;
+  /****
+  change to class
+  ****/
+}
+#editpictures {
+  margin-top: 20px;
 }
 
 #pix {
   color: #FFD700;
   font-family: 'droid serif', sans-serif;
   margin-bottom: 50px;
-}
-
-#editpictures {
-  margin-top: 20px;
 }
 
 .ep {

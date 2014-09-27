@@ -1,26 +1,15 @@
-%nav.top-bar#edit{"data-topbar" => "", :role => "navigation"}
-  %ul.title-area
-    %li.name
-      %h1
-        -if @mission.name.length < 23
-          =content_tag("a", "#{@mission.name}")
-        -else
-          =content_tag("a", "#{@mission.name[0..20]}...")
-  %section.top-bar-section
-    %ul.left
-      %li
-        %a{"data-reveal-id" => "codename", :href => "#"} Mission Name
-      %li
-        =link_to "Mission Target", changetarget_path(id: @mission.id), remote:true
-      %li.has-form
-        .row.collapse
-          = form_tag(pictures_path(:id => @mission.id), :method => "get", remote:true) do
-            .large-7.small-9.columns
-              = text_field_tag(:hashtag)
-            .large-5.small-3.columns
-              = submit_tag("Add More Pictures", class: "button [tiny small large]")
-      -if @pictures
-        %li
-          =link_to "delete pictures", deletepictures_path(id: @mission.id), remote:true
-      %li
-        = link_to "delete mission", mission_path(@mission), method: :delete, data: {confirm: "Are you sure you want to delete #{@mission.name}?"}
+%ul.small-block-grid-5#edit
+  %li
+    %a{"data-reveal-id" => "codename", :href => "#", :class => "button"} Mission Name
+  %li
+    =link_to "Mission Target", changetarget_path(id: @mission.id), :class => "button", remote:true
+  %li.has-form
+    .row.collapse
+      = form_tag(pictures_path(:id => @mission.id), :method => "get", remote:true) do
+        = text_field_tag(:hashtag)
+        = submit_tag("Add More Pictures", class: "button postfix")
+  -if @pictures
+    %li
+      =link_to "delete pictures", deletepictures_path(id: @mission.id), :class => "button", remote:true
+  %li
+    = link_to "delete mission", mission_path(@mission), method: :delete, :class => "button", data: {confirm: "Are you sure you want to delete #{@mission.name}?"}
