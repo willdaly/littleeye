@@ -93,6 +93,7 @@ SHOW
 #missioncontrol p {
   font-family: 'droid serif', sans-serif;
   display: inline;
+  font-size: 1.5em;
 }
 
 #clue {
@@ -103,14 +104,13 @@ SHOW
 
 .red {
   color: red;
-}
-
-.choice {
-  background: #212121;
+  font-style: italic;
 }
 
 .th {
   margin-bottom: 5px;
+  margin-right: 5px;
+  background: #212121;
 }
 
 /**
