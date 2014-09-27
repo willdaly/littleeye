@@ -38,39 +38,6 @@ ul.left li a {
   text-align: center;
 }
 
-#missionsindex {
-  background: #212121;
-  max-width: 25%;
-  padding: 10px;
-  text-align: center;
-  display: block;
-}
-
-#missionsindex li {
-  padding: 10px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  list-style: none;
-}
-
-#missionsindex li:hover {
-  background: #3b2f2f;
-}
-
-#missionsindex li a {
-  text-decoration: none;
-}
-
-/*
-.choice:hover {
-  border: 2.5px solid red;
-}
-*/
-
-.choice {
-  background: #212121;
-}
-
 #picsearchform {
   max-width: 19%;
   margin: 0 auto;
@@ -116,18 +83,16 @@ footer p, a {
 SHOW
 ****/
 
-ul.inline-list#missioncontrol {
+#missioncontrol {
   background: #212121;
-  margin: 0 auto;
-  max-width: 80%;
   margin-bottom: 20px;
   list-style: none;
+  text-align: center;
 }
 
 #missioncontrol p {
   font-family: 'droid serif', sans-serif;
   display: inline;
-  margin-right: 5px;
 }
 
 #clue {
@@ -138,6 +103,16 @@ ul.inline-list#missioncontrol {
 
 .red {
   color: red;
+}
+
+/*
+.choice:hover {
+  border: 2.5px solid red;
+}
+*/
+
+.choice {
+  background: #212121;
 }
 
 /**
@@ -173,7 +148,7 @@ ul.inline-list#missioncontrol {
 }
 
 #pix {
-  text-align: center;
+  /*text-align: center;*/
   color: #FFD700;
   font-family: 'droid serif', sans-serif;
   margin-bottom: 50px;
