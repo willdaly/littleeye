@@ -20,18 +20,19 @@
 
     %ul.right
       -if user_signed_in?
-        %li
-          =content_tag("a", "Agent: #{current_user.email}") if current_user
-        %li
-          =content_tag("a", "#{current_user.score} Missions Completed")
         %li.has-dropdown
-          %a{:href => "#"} Edit My Missions
+          %a{:href => "#"} Edit Missions
           %ul.dropdown#editmissions
             - @editable_missions.each do |mission|
               %li
                 =link_to mission.name, edit_mission_path(mission), remote:true
-        %li
-          =link_to "Log Out", destroy_user_session_path, method: :delete
+        %li.has-dropdown
+          %a{:href => "#"}= current_user.email
+          %ul.dropdown
+            %li
+              =content_tag("a", "#{current_user.score} Missions Completed")
+            %li
+              =link_to "Log Out", destroy_user_session_path, method: :delete
       -else
         %li
           %a{"data-reveal-id" => "signin", :href => "#"} Sign In
