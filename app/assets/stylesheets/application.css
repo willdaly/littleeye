@@ -105,14 +105,12 @@ SHOW
   color: red;
 }
 
-/*
-.choice:hover {
-  border: 2.5px solid red;
-}
-*/
-
 .choice {
   background: #212121;
+}
+
+.th {
+  margin-bottom: 5px;
 }
 
 /**
@@ -120,6 +118,10 @@ SHOW
 
 .alert, .notice {
   color: yellow;
+}
+
+.alert-box {
+  text-align: center;
 }
 
 #answer {
@@ -148,7 +150,6 @@ SHOW
 }
 
 #pix {
-  /*text-align: center;*/
   color: #FFD700;
   font-family: 'droid serif', sans-serif;
   margin-bottom: 50px;
@@ -156,10 +157,6 @@ SHOW
 
 #editpictures {
   margin-top: 20px;
-}
-
-.alert-box {
-  text-align: center;
 }
 
 .ep {

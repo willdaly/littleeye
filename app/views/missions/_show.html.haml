@@ -11,7 +11,7 @@
 %div#picdiv
   -if @pictures
     -@pictures.shuffle.each do |p|
-      = link_to picture_path(p), method: :post, remote: true do
+      = link_to picture_path(p), method: :post, remote: true, :class => "th" do
         =image_tag p.url, :class => "choice", :id => "#{p.id}"
 
 %div
