@@ -1,8 +1,8 @@
 %ul.small-block-grid-5#edit
   %li
-    %a{"data-reveal-id" => "codename", :href => "#", :class => "button"} Mission Name
+    %a{"data-reveal-id" => "codename", :href => "#", :class => "button [tiny small]"} Mission Name
   %li
-    =link_to "Mission Target", changetarget_path(id: @mission.id), :class => "button", remote:true
+    =link_to "Mission Target", changetarget_path(id: @mission.id), :class => "button [tiny small]", remote:true
   %li.has-form
     .row.collapse
       = form_tag(pictures_path(:id => @mission.id), :method => "get", remote:true) do
@@ -10,6 +10,6 @@
         = submit_tag("Add More Pictures", class: "button postfix")
   -if @pictures
     %li
-      =link_to "delete pictures", deletepictures_path(id: @mission.id), :class => "button", remote:true
+      =link_to "delete pictures", deletepictures_path(id: @mission.id), :class => "button [tiny small]", remote:true
   %li
-    = link_to "delete mission", mission_path(@mission), method: :delete, :class => "button", data: {confirm: "Are you sure you want to delete #{@mission.name}?"}
+    = link_to "delete mission", mission_path(@mission), method: :delete, :class => "button [tiny small]", data: {confirm: "Are you sure you want to delete #{@mission.name}?"}

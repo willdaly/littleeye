@@ -20,7 +20,6 @@
 header
 ******/
 .name h1 a {
-  font-family: 'droid serif', sans-serif;
   font-style: italic;
   color: #FFD700;
   text-shadow: 2px 2px #ff0000;
@@ -38,18 +37,8 @@ ul.left li a {
   text-align: center;
 }
 
-#picsearchform {
-  max-width: 19%;
-  margin: 0 auto;
-}
-
 body {
   background-image: url('navy_blue.png');
-}
-
-h1, h2, h3, p, label {
-  color: white;
-  font-family: 'droid serif', sans-serif;
 }
 
 a:visited{
@@ -68,14 +57,6 @@ footer {
 }
 
 footer p, a {
-  display: inline;
-}
-
-#about {
-  background: #212121;
-}
-
-#userscore h3 {
   display: inline;
 }
 
@@ -154,7 +135,6 @@ edit
 #edit .postfix {
   margin-top: 5%;
 }
-
 /****
 ****/
 
