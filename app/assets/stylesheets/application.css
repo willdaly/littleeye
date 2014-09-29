@@ -106,14 +106,13 @@ SHOW
 }
 
 #answer {
-  width: 150px;
-  height: 150px;
+  max-width: 480px;
+  max-height: 480px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -75px;
-  margin-top: -75px;
-  border-radius: 100%;
+  margin-left: -15em;
+  margin-top: -13em;
 }
 
 /****
@@ -142,6 +141,7 @@ edit
 #picdiv, #editpictures {
   max-width: 80%;
   margin: 0 auto;
+  text-align: center;
   /****
   change to class
   ****/
@@ -161,8 +161,15 @@ edit
   height: 150px;
   float: left;
   margin-right: 15px;
+  background-size: contain;
 }
 
 .ep h3 {
   color: red;
+}
+
+#victory {
+  font-style: italic;
+  color: #FFD700;
+  text-shadow: 2px 2px #ff0000;
 }

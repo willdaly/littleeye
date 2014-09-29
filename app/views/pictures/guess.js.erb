@@ -3,29 +3,23 @@ var guess = parseInt(guesses);
 var g = guess - 1;
 $(' ul.left li.has-dropdown.not-click').removeClass("active");
 if(<%= Picture.find_by_id(params[:id]).answer? %>){
-  hidemissioncontrolelements();
-  $('#picdiv').append("<img src='<%= Picture.find_by_id(params[:id]).url %>' id='answer'>");
-  $('#missioncontrol').text('<%= Mission.find_by_id(Picture.find_by_id(params[:id]).mission_id).clue %> has been spied!');
-  $('#guesses').css("color", "#FFD700");
-  $('#horn')[0].play();
-  $('ul.left li.has-dropdown.not-click').addClass("active");
+  var spied = '<%= Mission.find_by_id(Picture.find_by_id(params[:id]).mission_id).clue %> has been spied!';
+  gameresult('#horn', spied);
+  $('#picdiv').append("<img src='<%= Picture.find_by_id(params[:id]).url %>' id='answer'>").hide().slideToggle(300);
 } else {
   if (g > 0){
     $('#wahwah')[0].play();
     $('#guesses').text(g);
-    $('#'+'<%= Picture.find_by_id(params[:id]).id %>').css("opacity", "0.1");
+    $('#'+'<%= Picture.find_by_id(params[:id]).id %>').fadeOut(700);
   } else {
-    hidemissioncontrolelements();
-    $('#missioncontrol').css("background", "red");
-    $('#missioncontrol').text("mission failed");
-    $('#bass')[0].play();
-    $(' ul.left li.has-dropdown.not-click').addClass("active");
+    gameresult('#bass', 'mission failed');
   }
 }
 
-function hidemissioncontrolelements() {
-  $('#g').hide();
-  $('p#clue').hide();
-  $('.red').hide();
+function gameresult(sound, message) {
+  $('#missioncontrol').hide();
   $('.th').hide();
+  $(sound)[0].play();
+  $('#picdiv').append('<h1 id="victory">'+message+'</h1>').hide().slideToggle(300);
+  $(' ul.left li.has-dropdown.not-click').addClass("active");
 }

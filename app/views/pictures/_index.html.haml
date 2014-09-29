@@ -1,5 +1,5 @@
 %h2 Click picture to add to mission
 
 -@instagram.each do |ig|
-  =link_to pictures_path(picture: {answer: :false, url: ig.images.thumbnail.url, mission_id: @mission.id}), method: :post, remote:true do
+  =link_to pictures_path(picture: {answer: :false, url: ig.images.standard_resolution.url, mission_id: @mission.id}), method: :post, remote:true do
     =image_tag ig.images.thumbnail.url

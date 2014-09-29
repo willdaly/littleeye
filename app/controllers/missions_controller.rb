@@ -15,7 +15,7 @@ class MissionsController < ApplicationController
       array = string.split(" ")
       hashtag = array.join
       instagram = Instagram.tag_recent_media(hashtag, {:count => 28})
-      @urlarray = instagram.map!{ |ig| ig.images.thumbnail.url}
+      @urlarray = instagram.map!{ |ig| ig.images}
     else
       flash.now[:alert] = "Your mission could not be created"
       render :new

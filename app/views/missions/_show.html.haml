@@ -9,8 +9,8 @@
 %div#picdiv
   -if @pictures
     -@pictures.shuffle.each do |p|
-      = link_to picture_path(p), method: :post, remote: true, :class => "th" do
-        =image_tag p.url, :id => "#{p.id}"
+      = link_to picture_path(p), method: :post, remote: true, :class => "th ep", :id => "#{p.id}" do
+        =image_tag p.url
 
 %div
   = audio_tag "wah.wav", :id => "wahwah", :preload => "auto"
