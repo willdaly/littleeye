@@ -179,3 +179,8 @@ edit
   color: #FFD700;
   text-shadow: 2px 2px #ff0000;
 }
+
+.th {
+  max-width: 150px;
+  max-height: 150px;
+}
