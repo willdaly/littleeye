@@ -156,11 +156,17 @@ edit
   margin-bottom: 50px;
 }
 
+#pix h2 {
+  color: white;
+  text-align: center;
+}
+
 .ep {
   width: 150px;
   height: 150px;
   float: left;
-  margin-right: 15px;
+  margin-right: 5px;
+  margin-bottom: 5px;
   background-size: contain;
 }
 

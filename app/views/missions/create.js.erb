@@ -1,5 +1,9 @@
-$("header").empty();
-$("header").append( "<%=j render 'layouts/navigation'%>" );
-$('#createmission').foundation('reveal', 'close');
-$("#pix").empty();
-$("#pix").append( "<%=j render :partial => 'answer'%>" );
+<% if @worked %>
+  $("header").empty();
+  $("header").append( "<%=j render 'layouts/navigation'%>" );
+  $('#createmission').foundation('reveal', 'close');
+  $("#pix").empty();
+  $("#pix").append( "<%=j render :partial => 'answer'%>" );
+<% else %>
+  alert("There is already a mission with that name. please choose another name for your mission");
+<% end %>

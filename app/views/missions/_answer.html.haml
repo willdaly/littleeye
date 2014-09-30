@@ -1,4 +1,5 @@
-%h2 Click on picture to set the mission target
+%h2 Click picture to set as mission target
 -@urlarray.each do |url|
-  =link_to pictures_path(picture: {answer: :true, url: url.standard_resolution.url, mission_id: @mission.id}), method: :post, remote:true do
-    =image_tag url.thumbnail.url
+  .th
+    =link_to pictures_path(picture: {answer: :true, url: url.standard_resolution.url, mission_id: @mission.id}), method: :post, remote:true do
+      =image_tag url.thumbnail.url

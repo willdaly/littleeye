@@ -10,7 +10,7 @@ if(<%= Picture.find_by_id(params[:id]).answer? %>){
   if (g > 0){
     $('#wahwah')[0].play();
     $('#guesses').text(g);
-    $('#'+'<%= Picture.find_by_id(params[:id]).id %>').fadeOut(700);
+    $('#'+'<%= Picture.find_by_id(params[:id]).id %>').fadeTo(700, "0.1");
   } else {
     gameresult('#bass', 'mission failed');
   }

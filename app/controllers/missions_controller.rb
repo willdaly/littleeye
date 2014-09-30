@@ -10,15 +10,14 @@ class MissionsController < ApplicationController
   def create
     @mission = current_user.missions.build(name: params[:name], clue: params[:clue])
     if @mission.save
-      # flash.notice = "#{@mission.name} created"
+      @worked = true
       string = params[:clue]
       array = string.split(" ")
       hashtag = array.join
       instagram = Instagram.tag_recent_media(hashtag, {:count => 28})
       @urlarray = instagram.map!{ |ig| ig.images}
     else
-      flash.now[:alert] = "Your mission could not be created"
-      render :new
+      redirect_to root_path  
     end
   end
 
