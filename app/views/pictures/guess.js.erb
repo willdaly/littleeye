@@ -2,15 +2,15 @@ var guesses = $('#guesses').text();
 var guess = parseInt(guesses);
 var g = guess - 1;
 $(' ul.left li.has-dropdown.not-click').removeClass("active");
-if(<%= Picture.find_by_id(params[:id]).answer? %>){
-  var spied = '<%= Mission.find_by_id(Picture.find_by_id(params[:id]).mission_id).clue %> has been spied!';
+if(<%= @picture.answer? %>){
+  var spied = '<%= @mission.clue %> has been spied!';
   gameresult('#horn', spied);
-  $('#picdiv').append("<img src='<%= Picture.find_by_id(params[:id]).url %>' id='answer'>").hide().slideToggle(300);
+  $('#picdiv').append("<img src='<%= @picture.url %>' id='answer'>").hide().slideToggle(300);
 } else {
   if (g > 0){
     $('#wahwah')[0].play();
     $('#guesses').text(g);
-    $('#'+'<%= Picture.find_by_id(params[:id]).id %>').fadeTo(700, "0.1");
+    $('#'+'<%= @picture.id %>').fadeTo(700, "0.1");
   } else {
     gameresult('#bass', 'mission failed');
   }

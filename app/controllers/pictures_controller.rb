@@ -42,11 +42,11 @@ class PicturesController < ApplicationController
   end
 
   def guess
-    picture = Picture.find_by_id(params[:id])
-    mission = Mission.find_by_id(picture.mission_id)
-    if picture.answer?
+    @picture = Picture.find_by_id(params[:id])
+    @mission = Mission.find_by_id(@picture.mission_id)
+    if @picture.answer?
       if user_signed_in?
-        unless mission.user_id == current_user.id
+        unless @mission.user_id == current_user.id
           current_user.update(score: current_user.score + 1) if current_user
           current_user.save if current_user
         end

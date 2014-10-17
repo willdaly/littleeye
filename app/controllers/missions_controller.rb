@@ -16,8 +16,6 @@ class MissionsController < ApplicationController
       hashtag = array.join
       instagram = Instagram.tag_recent_media(hashtag, {:count => 28})
       @urlarray = instagram.map!{ |ig| ig.images}
-    else
-      redirect_to root_path  
     end
   end
 
