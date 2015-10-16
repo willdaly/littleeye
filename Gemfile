@@ -22,6 +22,19 @@ gem 'foundation-rails', '~> 5.4.3.1'
 gem 'rails_12factor', group: :production
 gem 'figaro'
 
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'fabrication'
+  gem 'shoulda'
+  gem 'factory_girl_rails'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
