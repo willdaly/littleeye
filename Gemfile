@@ -21,6 +21,8 @@ gem 'pg'
 gem 'foundation-rails', '~> 5.4.3.1'
 gem 'rails_12factor', group: :production
 gem 'figaro'
+gem 'omniauth'
+gem 'omniauth-instagram'
 
 group :test, :development do
   gem 'rspec-rails'
