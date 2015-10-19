@@ -34,15 +34,3 @@ group :test do
   gem 'shoulda'
   gem 'factory_girl_rails'
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
