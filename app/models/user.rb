@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :omniauthable
   has_many :missions
   validates_numericality_of :score
+
+  def self.find_or_create_by_instagram_omniauth(auth)
+
+  end
 end
