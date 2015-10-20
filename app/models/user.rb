@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   def self.find_or_create_by_instagram_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.password = Devise.friendly_token[0, 20]
-      user.name = auth.info.name
+      user.name = auth.info.username
     end
   end #omniauth
 end
