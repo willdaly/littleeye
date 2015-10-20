@@ -27,7 +27,7 @@
               %li
                 =link_to mission.name, edit_mission_path(mission), remote:true
         %li.has-dropdown
-          %a{:href => "#"}= current_user.email
+          %a{:href => "#"}= current_user.name
           %ul.dropdown
             %li
               =content_tag("a", "#{current_user.score} Missions Completed")
